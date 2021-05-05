@@ -1,0 +1,32 @@
+body{
+    background-color:burlywood;
+}
+
+/* img{
+    width:100px;
+    padding-left: 1000px;
+} */
+
+
+h1{
+    color: blue;
+    font-size:xx-large;
+}
+strong,pre,ul{
+    font-family: 'Times New Roman', Times, serif; 
+    color:black;
+}
+h3,h4{
+    color:rgb(233, 71, 21);
+}
+hr{
+    color: black;
+    border-color: black;
+    border-collapse: collapse;
+}
+table,th,td{
+    border-style: solid;
+    border-width: 1px;
+    border-color:black;
+    border-collapse: collapse;
+}

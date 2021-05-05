@@ -1,0 +1,22 @@
+body{
+    background-color: burlywood;
+}
+h2{
+    background-color:red;
+    font-size: 50px;
+    text-align: center;
+}
+p{
+    background-color:blue;
+    font-family: 'Franklin Gothic Medium';
+    font-size: 40px;
+}
+a{
+    font-size: 40px;
+}
+table,th,td{
+    border-style: solid;
+    border-width: 1px;
+    border-color:black;
+    border-collapse: collapse;
+}

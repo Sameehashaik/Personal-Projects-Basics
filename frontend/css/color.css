@@ -1,0 +1,26 @@
+header{
+    font-size: xx-large;
+    text-align: center;
+}
+body{
+    background-color: yellowgreen;
+}
+.color{
+    color: white;
+    text-align: center;
+    width: 200px;
+    border: 15px;
+    padding: 50px;
+    margin: 20px;
+    margin-top: 55px;
+    margin-left: 600px;
+    background: rgb(255, 99, 71);
+    font-size: large;
+}
+.default{  
+    display: flex;
+    padding-top: 40px;
+    padding-left: 500px;
+    margin-right: 20px;
+    margin-top: 20px;
+}

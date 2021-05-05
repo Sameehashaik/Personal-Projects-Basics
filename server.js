@@ -16,6 +16,13 @@ app.get("/Google", function(req, res){
     res.sendFile('frontend/html/google.html',{root:__dirname})
 })
 
+app.get("/Color", function(req, res){
+    res.sendFile('frontend/html/color.html',{root:__dirname})
+})
+
+app.get("/Practice", function(req, res){
+    res.sendFile('frontend/html/practice.html',{root:__dirname})
+})
 // Heroku will automatically set an environment variable called PORT
 const PORT = process.env.PORT || 3000;
  
