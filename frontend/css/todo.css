@@ -1,0 +1,54 @@
+/* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 250px;
+    
+}
+body{
+    background-color:bisque;
+}
+
+/* Style the header */
+header{
+    padding: 30px 40px;
+    color:skyblue;
+    text-align: center;
+}
+
+h1{
+    font-family:Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* Style the input */
+input{
+    width: 50%;
+    margin-right: 0;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Style the "Add" button */
+#add_button{
+    width: 10%;
+    padding: 10px;
+    margin-left: 0;
+    background-color:lightgray;
+    text-align: center;
+    cursor:pointer;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#add_button:hover {
+    background-color: #bbb;
+}
+#myList{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-left: 550px;
+}
