@@ -2,29 +2,7 @@
 <html>
     <head>
         <title>Google</title>
-        <style>
-            a{
-                color: black;
-                text-align: right;
-                font-family: Arial, Helvetica, sans-serif;
-            }
-            .right {
-                float: right;
-                width: 300px;
-                border: 3px;
-                padding: 0px;
-            }
-            img {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .center {
-                text-align: center;
-                border: 2px;
-                font-family: arial,sans-serif;
-            }
-        </style>
+        <link rel="stylesheet" href="/css/google.css">
     </head>
     <body>
         <div class="right">
@@ -35,13 +13,14 @@
         
         <div class="center">
             <br>
-            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="GoogleLogo">
-            <br>
-            <button type="button" style="background-color: #f8f9fa;">Google Search</button>
-            <button type="button" on click="https://www.google.com/doodles" style="background-color: #f8f9fa;">I'm Feeling Lucky</button>
-            <br>
-            <p>Google offered in:</p><p style="color:rgb(21, 21, 197)">हिन्दी বাংলা తెలుగు मराठी தமிழ் ગુજરાતી ಕನ್ನಡ മലയാളം ਪੰਜਾਬੀ</p>
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="GoogleLogo" width="500px">
+            <br><br>
+            <input type="text" class="search" placeholder="Search Here"> 
+            <br><br>
+            <button type="button">Google Search</button>
+            <button type="button" on click="https://www.google.com/doodles">I'm Feeling Lucky</button>
+            <br><br>
+            <pre>Google offered in:<p>हिन्दी বাংলা తెలుగు मराठी தமிழ் ગુજરાતી ಕನ್ನಡ മലയാളം ਪੰਜਾਬੀ</pre>
         </div>
-        
     </body>
 </html>
