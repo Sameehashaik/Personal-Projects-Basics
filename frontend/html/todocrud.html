@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Todo using CRUD</title>
+    <link rel="stylesheet" href="/css/todocrud.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>TODOs</h1>
+        <input type="text" id="data" placeholder="Things to be done..">
+        <button id="btn">Add</button> 
+    </header>
+    <div id="myList"></div>
+    <script>
+    window.onload = function () {
+        if (localStorage.getItem("hasCodeRunBefore") === null) {
+            $.ajax({
+                url: '/api/todo/-1',
+                type: 'DELETE',
+                dataType: 'json'
+            });
+            localStorage.setItem("hasCodeRunBefore", true);
+        }
+        disp()
+    }
+    function disp() {
+        $.get("/api/todo", function(data, status) {
+            var d=data
+            console.log(status)
+            console.log(d)
+            document.getElementById("myList").innerHTML=""
+            for(var i=0;i<d.task.length;++i) {
+                document.getElementById("myList").innerHTML+="<div id='box'><p id='data2'>"+d.task[i]+ "</p><span id='btns'><button class='btn' onclick='done("+i+")'>Done</button>"+" "+"<button class='btn' onclick='del("+i+")'>Delete</button></span> </div><br>"
+            }
+        });
+    }
+    $(document).ready(function() {
+        $("#btn").click(function(){
+            var d=$('#data')[0].value
+            var k={
+                "task":[d]
+            };
+            $.ajax({
+                url: '/api/todo',
+                type: 'POST',
+                data:{
+                    "task":d
+                },
+                dataType: 'json'
+            });
+            disp()
+        });
+    });
+    function del(i){
+        $.ajax({
+            url: '/api/todo/'+i,
+            type: 'DELETE',
+            dataType: 'json'                        
+        });            
+        disp()
+    }
+    function done(i){
+        $.ajax({
+            url: '/api/todo/'+i,            
+            type: 'PUT',            
+            dataType: 'json'            
+        });
+        disp()
+    }
+    </script>
+</body>
+</html>
+

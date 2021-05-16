@@ -32,6 +32,10 @@ app.get("/Todo", function(req, res){
     res.sendFile('frontend/html/todo.html',{root:__dirname})
 })
 
+app.get("/TodoCRUD", function(req, res){
+    res.sendFile('frontend/html/todocrud.html',{root:__dirname})
+})
+
 // Heroku will automatically set an environment variable called PORT
 const PORT = process.env.PORT || 3000;
  
@@ -40,44 +44,36 @@ app.listen(PORT, function(){
     console.log("Server Starting running on http://localhost:"+PORT);
 })
 
+//TO MAKE IT API SERVER
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
 
-// //TO MAKE IT API SERVER
-// app.use(express.urlencoded({extended: true}));
-// app.use(express.json());
-// app.user(function(req, res, next){
-//     // all requests will go through it
-// })
-// app.use('/api/special', function(req, res, next){
-//     // this is only for apis whose url starts with /api/special
-// })
-// var todos= [];
+var a={
+    "task":[]
+};
 
-// // 5 Routes for any resource
+app.get('/api/todo', function(req, res){
+    res.json(a);
+})
 
-// app.get('/api/todos', function(req, res){
-//     // Get all todos
-// })
+app.post('/api/todo', function(req, res){
+    var newUser= req.body;
+    a.task.push(newUser.task)
+    res.json(a)
+ })
 
-// app.get('/api/todos/:todoId', function(req, res){
+ app.delete('/api/todo/:id', function(req, res){
+    var i=req.params.id
+    if(i==-1){
+        for(var j=0;j<a.task.length;++j){
+            a.task.splice(j,1)
+            console.log(a.task[j])
+        }
+    }
+    a.task.splice(i,1)
+})
 
-//     // req.params.todoId
-
-//     // get single todo with given id
-// })
-
-// app.put('/api/todos/:todoId', function(req, res){
-
-//     // update
-// })
-
-// app.delete('/api/todos/:todoId', function(req, res){
-
-//     // delete
-// })
-
-
-// app.post('/api/todos', function(req, res){
-//     // Create
-
-//     // req.body will have what frontend sent
-// })
+app.put('/api/todo/:id', function(req, res){
+    var i=req.params.id
+    a.task[i]="<s>"+a.task[i]+"</s>" 
+})
