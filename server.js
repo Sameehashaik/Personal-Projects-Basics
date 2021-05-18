@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const Table = require('./frontend/js/table');
+const Table = require('./frontend/js/Table');
 
 const app = express();
  
