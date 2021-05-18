@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static(__dirname+"/frontend"));
 
 var password = process.env.Mongo_atlas_PASSWORD;
-var connectionString = "mongodb+srv://sameeha_shaik:alohamoracluster0.tdhog.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+var connectionString = "mongodb+srv://sameeha_shaik:alohamora@cluster0.tdhog.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
 mongoose.connect(connectionString, {useUnifiedTopology: true, useNewUrlParser: true});
 mongoose.connection.on('connected', function(){
