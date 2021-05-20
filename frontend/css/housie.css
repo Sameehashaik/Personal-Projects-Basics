@@ -1,0 +1,27 @@
+body {
+    background-color:cadetblue;
+}
+
+div {
+    text-align: center;
+    font-size: 20px;
+    font-family: inherit;
+}
+
+.numberTable {
+    font-size: 10px;
+    width:100%
+} 
+
+table, tr, td {
+    border-collapse: collapse;
+    border: solid 2px black;
+    width: 40px;
+    height: 20px;
+} 
+
+td {
+    min-width: 100px;
+    color: white;
+    font-size: 25px;
+} 

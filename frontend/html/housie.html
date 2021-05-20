@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housie</title>
+    <link rel="stylesheet" href="../css/housie.css">
+</head>
+<body>
+    <div>
+        <h1>Housie</h1>
+        <button onclick = "numbers()">Generate</button>
+        <p>Let's Begin!</p>
+    </div>
+    <div>
+        <p id = 'game'>Number Shown Here</p>
+        <table id = 'numberTable'>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>
+            <tr> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> </tr> 
+        </table>
+    </div>
+    <script>
+        var a = [];
+        let i = 0;
+        function numbers(i) {
+            var variable = setTimeout(function() {
+                var p = document.getElementById('game');
+                var r= Math.floor(Math.random() * 100);
+                if(a.indexOf(r) === -1) {
+                    a.push(r);
+                    var n=r.toString();
+                    if(n.length === 1) {
+                        var x = document.getElementById("numberTable").rows[parseInt(n[0])].cells;
+                        x[0].innerHTML = n[0];
+                        p.innerHTML = n[0];
+                    }
+                    else {
+                        var x = document.getElementById("numberTable").rows[parseInt(n[1])].cells;
+                        x[parseInt(n[0])].innerHTML = n;
+                        p.innerHTML = n;
+                    }
+                }
+                if(i === 99) {
+                    clearTimeout(variable);
+                    return;
+                }
+                numbers(i+1);
+            },1000)
+        }
+    </script>
+</body>
+</html>
