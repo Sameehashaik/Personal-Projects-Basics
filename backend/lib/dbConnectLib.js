@@ -2,7 +2,7 @@ const config = require('../config/config');
 const mongoose = require('mongoose');
 
 const connectionString = config.mongoConnectionString;
-const dbOptions = {};
+const dbOptions = {useNewUrlParser: true, useUnifiedTopology: true};
 
 module.exports = {
     connect : function(){
