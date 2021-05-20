@@ -1,18 +1,20 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const config = require('./backend/config/config')
+const dbConnectLib = require('./backend/lib/dbConnectLib')
 const Table = require('./frontend/js/Table');
-
 const app = express();
  
 app.use(express.static(__dirname+"/frontend"));
 
-var password = process.env.Mongo_atlas_PASSWORD;
-var connectionString = "mongodb+srv://sameeha_shaik:alohamora@cluster0.tdhog.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+dbConnectLib.connect();
 
-mongoose.connect(connectionString, {useUnifiedTopology: true, useNewUrlParser: true});
-mongoose.connection.on('connected', function(){
-    console.log("Database Connected");
-});
+// var password = process.env.Mongo_atlas_PASSWORD;
+// var connectionString = "mongodb+srv://sameeha_shaik:alohamora@cluster0.tdhog.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+// mongoose.connect(connectionString, {useUnifiedTopology: true, useNewUrlParser: true});
+// mongoose.connection.on('connected', function(){
+//     console.log("Database Connected");
+// });
 
 app.get("/", function(req, res){
     res.sendFile('frontend/html/index.html',{root:__dirname})
